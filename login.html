@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <input type="text" id="email" placeholder="Enter email" required><br><br>
+<input type="password" id="password" placeholder="Enter password" required><br><br>
+        <button id="login" onclick="handleLogin();">Login</button><br><br>
+        
+        <p id="message"></p>
+
+        <script>
+            function handleLogin(){
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var msg = document.getElementById("message");
+                console.log("handleLogin called");
+                
+                if(email === "" || password === ""){
+                    msg.style.color = "Red";
+                    msg.textContent = "Fields cannot be empty";
+                }
+                else if(email === "test@gmail.com" && password === "Test@123"){
+                    msg.style.color = "Green";
+                    msg.textContent = "Login successful";
+                }
+                else{
+                    msg.style.color = "Red";
+                    msg.textContent = "Enter valid email and password";
+                }
+            }
+        </script>
+    </body>
+</html>
